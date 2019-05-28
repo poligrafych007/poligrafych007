@@ -340,8 +340,15 @@
 	}
 }
 
+- (void)printLogMessage
+{
+    NSLog(@"Hello world!");
+}
+
 - (void)onReachabilityChanged
 {
+	[self printLogMessage];
+
 	[self.modules.outgoingMessagesQueue registerBackgroundTaskIfNeeded];
 	if ([[Reachability sharedReachability] isReachable])
 	{
